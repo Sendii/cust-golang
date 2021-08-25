@@ -7,6 +7,10 @@ type Siswa struct{
 	Jurusan string
 }
 
+func ColumnName() [4]string {
+	return [4]string{"id", "nama", "umur", "jurusan"}
+}
+
 func(s Siswa) Show() bool {
 	return sqlShow(s.Id)
 }
