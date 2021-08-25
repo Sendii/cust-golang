@@ -3,17 +3,16 @@ package main
 import (
 	"fmt"
 	// mat "belajar/materi"
-	// "belajar/db"
-	// "custgolang/db"
+	"custgolang/db"
 	_str "custgolang/structs"
 )
 
 
 func main(){
-	// var query db.Querys
+	var query db.Querys
 
-	// query = _str.Siswa{"A001", "Rizki", 19, "Inggris"}
-	// fmt.Println("show : ", query.Show())
+	query = _str.Siswa{"A001", "Rizki", 19, "Inggris"}
+	fmt.Println("show : ", query.Show())
 
 	// if query.Show() {
 	// 	query = _str.Siswa{"A001", "Rizki", 19, "Inggris"}

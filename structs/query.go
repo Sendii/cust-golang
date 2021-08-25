@@ -14,8 +14,8 @@ func sqlShow(id string)bool{
 
 	var res = Siswa{}
 	err = db.
-	QueryRow("select nama, umur, jurusan from siswa where id = ?", id).
-	Scan(&res.Nama, &res.Umur, &res.Jurusan) // yg di select, kudu dipanggil semua biar ga error
+	QueryRow("select "+ColumnName()+" from siswa where id = ?", id).
+	Scan(&res.Id, &res.Nama, &res.Umur, &res.Jurusan) // yg di select, kudu dipanggil semua biar ga error
 
 	if err != nil {
 		fmt.Println(err.Error())

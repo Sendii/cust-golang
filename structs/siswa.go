@@ -1,5 +1,9 @@
 package structs
 
+import (
+	"strings"
+)
+
 type Siswa struct{
 	Id string
 	Nama string
@@ -7,8 +11,19 @@ type Siswa struct{
 	Jurusan string
 }
 
-func ColumnName() [4]string {
-	return [4]string{"id", "nama", "umur", "jurusan"}
+var fields []string
+func init(){
+	fields = []string{"id", "nama", "umur", "jurusan"}
+}
+
+// return column name at table
+func ColumnName() string {
+	return strings.Join(fields, ",")
+}
+
+// return count column name at table
+func ColumnTota() int {
+	return len(fields)
 }
 
 func(s Siswa) Show() bool {
