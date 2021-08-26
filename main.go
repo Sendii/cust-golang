@@ -22,9 +22,9 @@ func main(){
 	// query = _str.Siswa{"A001", "Rizki", 19, "Inggris"}
 	// fmt.Println("create : ", query.Create())
 
-	if query.Show() {
-		query = _str.Siswa{"A001", "Rizki Update", 20, "Inggris Update"}
-		fmt.Println("update : ", query.Update())
-	}	
+	// if query.Show() {
+	// 	query = _str.Siswa{"A001", "Rizki Update", 20, "Inggris Update"}
+	// 	fmt.Println("update : ", query.Update())
+	// }	
 	fmt.Println("Nama kolom : ", _str.ColumnName())
 }
