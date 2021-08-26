@@ -2,6 +2,11 @@ package structs
 
 import (
 	"strings"
+	// _help "custgolang/helper"
+	"os"
+	"path/filepath"
+	"fmt"
+	"log"
 )
 
 type Siswa struct{
@@ -19,6 +24,14 @@ func init(){
 // return column name at table
 func ColumnName() string {
 	return strings.Join(fields, ",")
+}
+
+func TableName(){
+	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(dir)
 }
 
 // return count column name at table

@@ -26,5 +26,5 @@ func main(){
 	// 	query = _str.Siswa{"A001", "Rizki Update", 20, "Inggris Update"}
 	// 	fmt.Println("update : ", query.Update())
 	// }	
-	fmt.Println("Nama kolom : ", _str.ColumnName())
+	_str.TableName()
 }
