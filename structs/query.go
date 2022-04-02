@@ -4,7 +4,7 @@ import (
 	db "custgolang/db"
 )
 
-func sqlShow(id string)bool{
+func sqlShow(id int)bool{
 	db, err := db.PConenctDB()
 	if err != nil {
 		fmt.Println(err.Error())
@@ -24,7 +24,7 @@ func sqlShow(id string)bool{
 	return true
 }
 
-func SqlInsert(id string, nama string, umur int, jurusan string)bool{
+func SqlInsert(nama string, umur int, jurusan string)bool{
 	db, err := db.PConenctDB()
 	if err != nil{
 		fmt.Println(err.Error())
@@ -32,7 +32,7 @@ func SqlInsert(id string, nama string, umur int, jurusan string)bool{
 	}
 	defer db.Close()
 
-	_, err = db.Exec("insert into siswa values(?, ?, ?, ?)", id, nama, umur, jurusan)
+	_, err = db.Exec("insert into siswa (nama, umur, jurusan) values(?, ?, ?)", nama, umur, jurusan)
 	if err != nil{
 		fmt.Println(err.Error())
 		return false
@@ -40,7 +40,7 @@ func SqlInsert(id string, nama string, umur int, jurusan string)bool{
 	return true
 }
 
-func sqlUpdate(id string, nama string, umur int, jurusan string)bool{
+func sqlUpdate(id int, nama string, umur int, jurusan string)bool{
 	db, err := db.PConenctDB()
 	if err != nil{
 		fmt.Println(err.Error())
@@ -56,7 +56,7 @@ func sqlUpdate(id string, nama string, umur int, jurusan string)bool{
 	return true
 }
 
-func sqlDelete(id string)bool{
+func sqlDelete(id int)bool{
 	db, err := db.PConenctDB()
 	if err != nil{
 		fmt.Println(err.Error())

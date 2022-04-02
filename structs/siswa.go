@@ -10,7 +10,7 @@ import (
 )
 
 type Siswa struct{
-	Id string
+	Id int
 	Nama string
 	Umur int
 	Jurusan string
@@ -44,7 +44,7 @@ func(s Siswa) Show() bool {
 }
 
 func(s Siswa) Create() bool {
-	return SqlInsert(s.Id, s.Nama, s.Umur , s.Jurusan)
+	return SqlInsert(s.Nama, s.Umur , s.Jurusan)
 }
 
 func(s Siswa) Update() bool {
